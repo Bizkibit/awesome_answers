@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
 
-  resources :questions
+  # /questions/5/answers <- POST
+  # /questions/5/answers <- GET
+
+  resources :questions do
+    resources :answers, only: [:create, :destroy]
+    # adds the following nested routes
+    # /questions/:question_id/answers VERB: post
+    # /questions/:question_id/answers/:id VERB: delete
+  end
   # resources :questions, only: [:new, :create]
   # resources :questions, except: [:edit, :update
 

@@ -42,6 +42,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @answer = Answer.new
+    @answers = @question.answers.order(created_at: :desc)
   end
 
   def index
@@ -71,7 +73,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit([:title, :body])
+    params.require(:question).permit([:title, :body, :category_id])
   end
 
   def find_question
