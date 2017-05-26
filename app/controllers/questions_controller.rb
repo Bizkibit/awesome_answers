@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   # `before_action` takes it a block or a symbol that refers to a method. The
   # block or the method will be executed just before the action. This will
   # happen within the same request/response cycle which means that defined
@@ -22,6 +23,8 @@ class QuestionsController < ApplicationController
   # VERB: POST
   def create
     @question = Question.new question_params
+    # @question.user_id = session[:user_id]
+    @question.user = current_user
     if @question.save
       # redirect_to question_path({ id: @question.id })
       # redirect_to question_path({ id: @question })
