@@ -45,6 +45,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'cancancan', '~> 1.10'
 
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

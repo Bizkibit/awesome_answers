@@ -26,6 +26,8 @@ class QuestionsController < ApplicationController
     # @question.user_id = session[:user_id]
     @question.user = current_user
     if @question.save
+      QuestionReminderJob.set(wait: 5.days).perform_later(@question.id)
+
       # redirect_to question_path({ id: @question.id })
       # redirect_to question_path({ id: @question })
 
@@ -79,7 +81,7 @@ class QuestionsController < ApplicationController
       @question.destroy
       redirect_to questions_path, notice: 'Question deleted'
     else
-      head :unauthorized 
+      head :unauthorized
     end
   end
 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
 
   # when you put routes in Rails within a `namespace` all the urls/paths will be
   # prepended with `/` + the namespace so in this example all the routes defined
