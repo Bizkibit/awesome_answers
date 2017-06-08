@@ -47,12 +47,18 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @like = @question.likes.find_by(user: current_user)
     @answer = Answer.new
     @answers = @question.answers.order(created_at: :desc)
   end
 
   def index
-    @questions = Question.recent(30)
+    if params.has_key? :user_id
+      @user = User.find(params[:user_id])
+      @questions = @user.liked_questions.order(created_at: :desc)
+    else
+      @questions = Question.recent(30)
+    end
   end
 
   def edit

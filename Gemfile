@@ -48,6 +48,8 @@ gem 'cancancan', '~> 1.10'
 gem 'delayed_job_active_record'
 gem 'delayed_job_web'
 
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
