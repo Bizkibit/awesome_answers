@@ -20,6 +20,10 @@
     |
     <%= link_to 'All Questions', questions_path %>
     |
+    <% if user_signed_in? %>
+    <%= link_to 'My Liked Questions', user_liked_questions_path(current_user) %>
+    |
+    <% end %>
     <%= link_to('Contact Us', contact_url) %>
     <% if user_signed_in? %>
       Hello <%= current_user.first_name %>,
