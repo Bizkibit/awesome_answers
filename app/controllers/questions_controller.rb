@@ -96,6 +96,7 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit([:title, :body, :category_id])
+    
   end
 
   def find_question
