@@ -42,6 +42,9 @@ class Question < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :likers, through: :likes, source: :user
 
+  has_many :votes, dependent: :destroy
+  has_many :voters, through: :votes, source: :user
+
   validates(:title, { presence: { message: 'must be provided' },
                       uniqueness: true })
   validates(:body, { length: { minimum: 5, maximum: 1000 }})
