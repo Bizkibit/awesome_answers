@@ -20,11 +20,17 @@ class VotesController < ApplicationController
   end
 
   def update
-
+    if @vote.update is_up: params[:is_up]
+      flash[:notice] = 'vote changed'
+    else
+      flash[:alert] = @vote.pretty_errors
+    end
+    
+    redirect_to @vote.question
   end
 
   def destroy
-    
+
   end
 
   private
