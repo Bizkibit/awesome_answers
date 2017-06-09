@@ -2,6 +2,7 @@ User.destroy_all
 Category.destroy_all
 Answer.destroy_all
 Question.destroy_all
+Tag.destroy_all
 
 PASSWORD = 'pass123'
 
@@ -34,6 +35,10 @@ questions.each do |q|
   rand(1..5).times do
     Answer.create(body: Faker::RickAndMorty.quote, question: q)
   end
+end
+
+10.times do
+  Tag.create name: Faker::Hipster.word
 end
 
 puts Cowsay.say 'Created 200 questions', :cow
