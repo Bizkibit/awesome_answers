@@ -24,6 +24,6 @@ module VotesHelper
         method: :delete
     end
 
-    [ upvote, question.vote_total, downvote ].join('').html_safe
+    tag.div(class: 'voting_buttons', [ upvote, question.vote_total, downvote ].join('')).html_safe
   end
 end
