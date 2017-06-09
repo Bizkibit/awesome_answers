@@ -23,7 +23,10 @@ module VotesHelper
         question_vote_path(question, vote),
         method: :delete
     end
-
-    tag.div(class: 'voting_buttons', [ upvote, question.vote_total, downvote ].join('')).html_safe
+    content_tag(
+    :div,
+    [ upvote, question.vote_total, downvote ].join('').html_safe,
+    class: 'vote-button'
+    )
   end
 end
