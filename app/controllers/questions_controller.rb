@@ -48,6 +48,7 @@ class QuestionsController < ApplicationController
 
   def show
     @like = @question.likes.find_by(user: current_user)
+    @vote = @question.votes.find_by(user: current_user)
     @answer = Answer.new
     @answers = @question.answers.order(created_at: :desc)
   end
