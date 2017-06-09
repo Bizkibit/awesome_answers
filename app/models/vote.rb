@@ -12,4 +12,13 @@ class Vote < ApplicationRecord
   # You need to use the inclusion: validations where
   # you can specify the type values that are allowed
   validates :is_up, inclusion: { in: [true, false] }
+
+  def self.up
+    where(is_up: true)
+  end
+
+  def self.down
+    where(is_up: false)
+  end
+  
 end
