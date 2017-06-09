@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   before_action :find_question, only: [:create]
-
+  before_action :find_vote, only: [:update, :destroy]
   def create
     vote = Vote.new (user: current_user, question: @question, is_up: params[:is_up])
     if vote.save
