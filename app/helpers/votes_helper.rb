@@ -14,7 +14,7 @@ module VotesHelper
         question_votes_path(question, { is_up: false }),
         method: :post
       )
-    ].join('')
+    ].join('').html_safe
   # end
   end
 end
