@@ -24,7 +24,7 @@ class VotesController < ApplicationController
   end
 
   def destroy
-
+    
   end
 
   private
