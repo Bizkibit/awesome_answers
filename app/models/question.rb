@@ -62,6 +62,10 @@ class Question < ApplicationRecord
     title.upcase
   end
 
+  def vote_total
+    votes.up.count - votes.down.count
+  end
+
   private
 
   def set_defaults
