@@ -25,12 +25,18 @@ class VotesController < ApplicationController
     else
       flash[:alert] = @vote.pretty_errors
     end
-    
+
     redirect_to @vote.question
   end
 
   def destroy
+    if @vote.destroy
+      flash[:notice] = 'vote removed'
+    else
+      flash[:alert] = @vote.pretty_errors
+    end
 
+    redirect_to @vote.question
   end
 
   private
