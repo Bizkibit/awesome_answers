@@ -3,6 +3,8 @@
 <p><strong>Category:</strong> <%= @question.category&.name %></p>
 <p><strong>Author:</strong> <%= @question.user&.full_name %></p>
 
+<%= question_voter(@question, @vote) %>
+
 <!-- reddit style voting UI  -->
 
 <div class="voting-buttons">
