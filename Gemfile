@@ -33,6 +33,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'cowsay', '0.3.0'
 gem 'faker', github: 'stympy/faker'
+gem 'jquery-rails'
+gem 'chosen-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

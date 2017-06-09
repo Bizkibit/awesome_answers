@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require welcome
 //= require_tree .
-
+//= require chosen-jquery
 // require_tree will require all files including folder and sub-folders in the
 // /app/assets/javascript folder. The files will included in an alphabatical
 // order unless you specify otherwise.
