@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :questions
+    end
+  end
+
+  
   match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
 
   # when you put routes in Rails within a `namespace` all the urls/paths will be
