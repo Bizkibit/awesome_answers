@@ -52,6 +52,7 @@ gem 'delayed_job_web'
 
 gem 'font-awesome-rails'
 gem "rails-erd"
+gem 'actice_model_serializers'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
