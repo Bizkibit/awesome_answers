@@ -54,6 +54,8 @@ gem 'font-awesome-rails'
 gem "rails-erd"
 gem 'active_model_serializers'
 
+gem "rack-cors"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
