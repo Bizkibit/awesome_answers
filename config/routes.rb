@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
 
-
+  # /api/v1/questions
+  # using the defaults: argument, we can provide a set of options
+  # that will be default for every nested route.
+  # In this case, every route inside of the :api namespace, will
+  # render json by default instead of html.
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :questionsm only: [:index, :show, :create]
+      resources :questions, only: [:index, :show, :create]
     end
   end
-
 
   match "/delayed_job" => DelayedJobWeb, :anchor => false, :via => [:get, :post]
 
@@ -73,7 +76,7 @@ Rails.application.routes.draw do
 
   post('/contact_submit', { to: 'welcome#submit' })
 
-  # in the line below 👇 we're defining a route that says: when we receive a GET
+  # in the line below ð we're defining a route that says: when we receive a GET
   # (http) requests with URL (from HTTP as well) that is `/` then handle that
   # request in the `WelcomeController` using the `index` action
   # the `as` option will define a route helper method that can be used in the
